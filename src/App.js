@@ -13,7 +13,8 @@ class App extends Component {
 	};
 
 
-	fetchTheRepos() {
+	fetchTheRepos(event) {
+    event.preventDefault();
 		fetch(`https://api.github.com/orgs/${this.state.company}/repos`)
 			.then((resp) => resp.json())
 			.then((data) => {
